@@ -69,10 +69,10 @@ const Default = (colors: PalettesProps, _: ThemeMode): PaletteThemeProps => {
                 dark: greyColors[700],
                 800: greyColors[800],
                 darker: greyColors[900],
-                A100: greyColors[0],
+                A100: greyColors[50],
                 A200: greyColors.A400,
                 A300: greyColors.A700,
-                contrastText: greyColors[0]
+                contrastText: greyColors[50],
             },
             error: {
                 lighter: errorColors[0],

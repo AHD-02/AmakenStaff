@@ -1,10 +1,5 @@
-// material-ui
 import {Theme} from '@mui/material/styles';
-
-// third-party
 import {merge} from 'lodash';
-
-// project import
 import Accordion from './Accordion';
 import AccordionDetails from './AccordionDetails';
 import AccordionSummary from './AccordionSummary';
@@ -33,7 +28,6 @@ import ListItemIcon from './ListItemIcon';
 import LoadingButton from './LoadingButton';
 import OutlinedInput from './OutlinedInput';
 import Pagination from './Pagination';
-import PaginationItem from './PaginationItem';
 import Popover from './Popover';
 import Radio from './Radio';
 import Slider from './Slider';
@@ -83,7 +77,6 @@ export default function ComponentsOverrides(theme: Theme) {
         LoadingButton(),
         OutlinedInput(theme),
         Pagination(),
-        PaginationItem(theme),
         Popover(theme),
         Radio(theme),
         Slider(theme),

@@ -42,7 +42,7 @@ export default function Alert(theme: Theme) {
                     marginTop: 3
                 },
                 filled: {
-                    color: theme.palette.grey[0]
+                    color: theme.palette.grey[50]
                 },
                 border: {
                     padding: '10px 16px',
