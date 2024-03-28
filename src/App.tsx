@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { RouterProvider } from "react-router-dom";
+import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import advancedFormat from "dayjs/plugin/advancedFormat";
+import "react-toastify/dist/ReactToastify.css";
+import utc from "dayjs/plugin/utc";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { ToastContainer } from "react-toastify";
+import { ScrollTop } from "./Components";
+import router from "./routes";
+import ThemeCustomization from "./theme";
 
-function App() {
-  const [count, setCount] = useState(0)
+dayjs.extend(timezone);
+dayjs.extend(utc);
+dayjs.extend(advancedFormat);
 
+const App = () => {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <ThemeCustomization>
+          <ScrollTop>
+            <>
+              <ToastContainer
+                position="top-right"
+                autoClose={2000}
+                hideProgressBar={true}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss={false}
+                draggable
+                pauseOnHover
+              />
+              <RouterProvider router={router} />
+            </>
+          </ScrollTop>
+        </ThemeCustomization>
+      </LocalizationProvider>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
