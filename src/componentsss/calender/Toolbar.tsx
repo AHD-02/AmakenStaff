@@ -5,7 +5,7 @@ import { Theme } from '@mui/material/styles';
 import { useMediaQuery, Button, ButtonGroup, Grid, Stack, Tooltip, Typography, GridProps } from '@mui/material';
 
 // project import
-import IconButton from 'components/@extended/IconButton';
+import IconButton from 'componentsss/@extended/IconButton';
 
 // assets
 import { AppstoreOutlined, LayoutOutlined, LeftOutlined, OrderedListOutlined, PicCenterOutlined, RightOutlined } from '@ant-design/icons';

@@ -6,7 +6,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { DropDownItem } from "components/dropDownProps";
+import { DropDownItem } from "componentsss/dropDownProps";
 import AutocompleteProps, { SelectItem } from "types/autocompleteType";
 import { CheckBox, CheckBoxOutlineBlank } from "@mui/icons-material";
 

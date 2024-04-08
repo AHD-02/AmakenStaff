@@ -2,7 +2,7 @@ import {Outlet} from 'react-router-dom';
 import {Box, Container, Toolbar} from '@mui/material';
 import Drawer from './Drawer';
 import Header from './Header';
-import Breadcrumbs from 'components/@extended/Breadcrumbs';
+import Breadcrumbs from 'componentsss/@extended/Breadcrumbs';
 import AuthGuard from 'utils/route-guard/AuthGuard';
 
 

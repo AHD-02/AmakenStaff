@@ -17,8 +17,8 @@ import {
 import { FormattedMessage } from "react-intl";
 import NavItem from "./NavItem";
 import NavCollapse from "./NavCollapse";
-import SimpleBar from "components/SimpleBar";
-import Transitions from "components/@extended/Transitions";
+import SimpleBar from "componentsss/SimpleBar";
+import Transitions from "componentsss/@extended/Transitions";
 import useConfig from "hooks/useConfig";
 import { useGetMenuMaster } from "hooks/useMenu";
 import { DownOutlined, GroupOutlined, RightOutlined } from "@ant-design/icons";

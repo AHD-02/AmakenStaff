@@ -20,10 +20,10 @@ import {
 
 // project import
 import NavItem from './NavItem';
-import Dot from 'components/@extended/Dot';
-import IconButton from 'components/@extended/IconButton';
-import SimpleBar from 'components/SimpleBar';
-import Transitions from 'components/@extended/Transitions';
+import Dot from 'componentsss/@extended/Dot';
+import IconButton from 'componentsss/@extended/IconButton';
+import SimpleBar from 'componentsss/SimpleBar';
+import Transitions from 'componentsss/@extended/Transitions';
 
 import useConfig from 'hooks/useConfig';
 import {useGetMenuMaster} from 'hooks/useMenu';

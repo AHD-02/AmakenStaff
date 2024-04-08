@@ -2,7 +2,7 @@
 import { Box, FormControlLabel, Radio, Tooltip } from '@mui/material';
 
 // project import
-import Avatar from 'components/@extended/Avatar';
+import Avatar from 'componentsss/@extended/Avatar';
 
 // assets
 import { CheckOutlined } from '@ant-design/icons';

@@ -5,7 +5,7 @@ import {alpha, useTheme} from '@mui/material/styles';
 import {CardMedia, FormControlLabel, Grid, Radio, RadioGroup, Stack, Typography} from '@mui/material';
 
 // project import
-import MainCard from 'components/MainCard';
+import MainCard from 'componentsss/MainCard';
 import useConfig from 'hooks/useConfig';
 
 // third-party

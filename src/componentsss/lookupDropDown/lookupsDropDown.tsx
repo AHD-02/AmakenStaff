@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { LookUpMetaTypes, LookupType } from "types";
-import DropDown from "components/dropDown/dropDown";
+import DropDown from "componentsss/dropDown/dropDown";
 
 type Props = {
   id?: string | number | null;

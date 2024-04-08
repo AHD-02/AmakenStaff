@@ -1,5 +1,5 @@
 import { Box, ListItemAvatar, ListItemText } from "@mui/material";
-import Avatar from "components/@extended/Avatar";
+import Avatar from "componentsss/@extended/Avatar";
 
 const CompanyInfo = () => {
   return (

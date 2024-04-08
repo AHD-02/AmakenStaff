@@ -5,7 +5,7 @@ import {useTheme} from '@mui/material/styles';
 import {Box, Tooltip} from '@mui/material';
 
 // project import
-import IconButton from 'components/@extended/IconButton';
+import IconButton from 'componentsss/@extended/IconButton';
 
 // assets
 import {FullscreenExitOutlined, FullscreenOutlined} from '@ant-design/icons';

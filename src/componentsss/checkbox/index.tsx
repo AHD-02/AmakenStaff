@@ -1,5 +1,5 @@
 import { Checkbox, Grid, Typography } from "@mui/material";
-import { CheckBoxLabel } from "components/style";
+import { CheckBoxLabel } from "componentsss/style";
 
 interface CheckboxProps {
   name: string

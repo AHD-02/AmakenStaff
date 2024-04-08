@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Box, Chip, Tab, Tabs } from '@mui/material';
 
 // project import
-import MainCard from 'components/MainCard';
+import MainCard from 'componentsss/MainCard';
 import { BasicTabsProps, ITabs, TabPanelProps } from './types';
 
 // ==============================|| TAB PANEL ||============================== //

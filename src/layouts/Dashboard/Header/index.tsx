@@ -7,7 +7,7 @@ import {AppBar, AppBarProps, Toolbar, useMediaQuery} from '@mui/material';
 // project import
 import AppBarStyled from './AppBarStyled';
 import HeaderContent from './HeaderContent';
-import IconButton from 'components/@extended/IconButton';
+import IconButton from 'componentsss/@extended/IconButton';
 
 import {DRAWER_WIDTH, MINI_DRAWER_WIDTH} from 'config';
 import useConfig from 'hooks/useConfig';

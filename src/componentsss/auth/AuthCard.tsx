@@ -3,7 +3,7 @@ import {Theme} from '@mui/material/styles';
 import {Box} from '@mui/material';
 
 // project import
-import MainCard, {MainCardProps} from 'components/MainCard';
+import MainCard, {MainCardProps} from 'componentsss/MainCard';
 
 // ==============================|| AUTHENTICATION - CARD WRAPPER ||============================== //
 

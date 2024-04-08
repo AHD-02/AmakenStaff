@@ -1,8 +1,6 @@
 import { RouterProvider } from "react-router-dom";
 import router from "routes";
 import ThemeCustomization from "theme";
-import RTLLayout from "components/RTLLayout";
-import ScrollTop from "components/ScrollTop";
 import { IntlProvider } from "react-intl";
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
@@ -13,6 +11,8 @@ import utc from "dayjs/plugin/utc";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { ToastContainer } from "react-toastify";
+import RTLLayout from "componentsss/RTLLayout";
+import ScrollTop from "componentsss/ScrollTop";
 dayjs.extend(timezone);
 dayjs.extend(utc);
 dayjs.extend(advancedFormat);

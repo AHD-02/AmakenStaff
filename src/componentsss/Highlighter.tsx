@@ -8,7 +8,7 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 // project import
 import SyntaxHighlight from 'utils/SyntaxHighlight';
-import IconButton from 'components/@extended/IconButton';
+import IconButton from 'componentsss/@extended/IconButton';
 
 // assets
 import {CodeOutlined, CopyOutlined} from '@ant-design/icons';

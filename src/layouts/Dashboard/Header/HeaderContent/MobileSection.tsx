@@ -3,8 +3,8 @@ import {useTheme} from '@mui/material/styles';
 import {AppBar, Box, ClickAwayListener, Paper, Popper, Toolbar} from '@mui/material';
 import Search from './Search';
 import Profile from './Profile';
-import IconButton from 'components/@extended/IconButton';
-import Transitions from 'components/@extended/Transitions';
+import IconButton from 'componentsss/@extended/IconButton';
+import Transitions from 'componentsss/@extended/Transitions';
 import {MoreOutlined} from '@ant-design/icons';
 import {ThemeMode} from 'types/config';
 

@@ -12,7 +12,7 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
-import Avatar from "components/@extended/Avatar";
+import Avatar from "componentsss/@extended/Avatar";
 import { useGetMenuMaster } from "hooks/useMenu";
 import { RightOutlined } from "@ant-design/icons";
 import { useAppDispatch } from "state/store";

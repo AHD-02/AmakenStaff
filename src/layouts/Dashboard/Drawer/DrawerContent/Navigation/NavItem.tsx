@@ -5,8 +5,8 @@ import {useTheme} from '@mui/material/styles';
 import {Avatar, Box, Chip, ListItemButton, ListItemIcon, ListItemText, Typography, useMediaQuery} from '@mui/material';
 
 // project import
-import Dot from 'components/@extended/Dot';
-import IconButton from 'components/@extended/IconButton';
+import Dot from 'componentsss/@extended/Dot';
+import IconButton from 'componentsss/@extended/IconButton';
 
 import useConfig from 'hooks/useConfig';
 import {useGetMenuMaster, useHandlerDrawerOpen} from 'hooks/useMenu';

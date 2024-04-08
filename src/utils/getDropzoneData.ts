@@ -1,5 +1,5 @@
 // components
-import { CustomFile } from "components/uploaders/types/dropzone";
+import { CustomFile } from "componentsss/uploaders/types/dropzone";
 
 export default function getDropzoneData(file: CustomFile | string, index?: number) {
   if (typeof file === 'string') {

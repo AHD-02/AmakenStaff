@@ -11,10 +11,10 @@ import ColorScheme from './ColorScheme';
 import ThemeWidth from './ThemeWidth';
 import ThemeFont from './ThemeFont';
 import ThemeMenuLayout from './ThemeMenuLayout';
-import MainCard from 'components/MainCard';
-import IconButton from 'components/@extended/IconButton';
-import AnimateButton from 'components/@extended/AnimateButton';
-import SimpleBar from 'components/SimpleBar';
+import MainCard from 'componentsss/MainCard';
+import IconButton from 'componentsss/@extended/IconButton';
+import AnimateButton from 'componentsss/@extended/AnimateButton';
+import SimpleBar from 'componentsss/SimpleBar';
 import useConfig from 'hooks/useConfig';
 
 // assets

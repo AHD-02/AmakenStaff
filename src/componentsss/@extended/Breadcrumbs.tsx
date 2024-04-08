@@ -7,7 +7,7 @@ import {Divider, Grid, Typography} from '@mui/material';
 import MuiBreadcrumbs from '@mui/material/Breadcrumbs';
 
 // project import
-import MainCard from 'components/MainCard';
+import MainCard from 'componentsss/MainCard';
 // assets
 import {ApartmentOutlined, HomeFilled, HomeOutlined} from '@ant-design/icons';
 

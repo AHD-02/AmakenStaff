@@ -5,7 +5,7 @@ import {useTheme} from '@mui/material/styles';
 import {Box, FormControlLabel, Grid, Radio, RadioGroup, Stack, Typography} from '@mui/material';
 
 // project import
-import MainCard from 'components/MainCard';
+import MainCard from 'componentsss/MainCard';
 import useConfig from 'hooks/useConfig';
 
 import {FontFamily} from 'types/config';

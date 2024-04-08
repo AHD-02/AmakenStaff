@@ -6,7 +6,7 @@ import {useMediaQuery} from '@mui/material';
 import NavUser from './NavUser';
 import NavCard from './NavCard';
 import Navigation from './Navigation';
-import SimpleBar from 'components/SimpleBar';
+import SimpleBar from 'componentsss/SimpleBar';
 import {useGetMenuMaster} from 'hooks/useMenu';
 
 
