@@ -1,10 +1,20 @@
 import {ChangeEvent} from 'react';
-import {alpha} from '@mui/material/styles';
+
+// material-ui
+import {alpha, useTheme} from '@mui/material/styles';
 import {CardMedia, FormControlLabel, Grid, Radio, RadioGroup, Stack, Typography} from '@mui/material';
-import MainCard from 'Components/MainCard';
+
+// project import
+import MainCard from 'components/MainCard';
 import useConfig from 'hooks/useConfig';
+
+// third-party
 import {PalettesProps, presetDarkPalettes, presetPalettes} from '@ant-design/colors';
+
+// assets
 import colorLayout from 'assets/images/customization/theme-color.svg';
+
+// types
 import {PresetColor, ThemeMode} from 'types/config';
 
 interface ColorProps {
@@ -15,7 +25,11 @@ interface ColorProps {
     shadow: string;
 }
 
+// ==============================|| CUSTOMIZATION - COLOR SCHEME ||============================== //
+
 const ColorScheme = () => {
+    const theme = useTheme();
+
     const {mode, presetColor, onChangePresetColor} = useConfig();
 
     const colors: PalettesProps = mode === ThemeMode.DARK ? presetDarkPalettes : presetPalettes;
@@ -105,7 +119,7 @@ const ColorScheme = () => {
                                     sx={{bgcolor: presetColor === color.id ? color.lighter : 'secondary.lighter', p: 1}}
                                     border={false}
                                     boxShadow
-                                    shadow={color.shadow}
+                                    shadow={presetColor === color.id ? color.shadow : theme.customShadows.z1}
                                 >
                                     <Stack spacing={1.5} alignItems="center">
                                         <CardMedia

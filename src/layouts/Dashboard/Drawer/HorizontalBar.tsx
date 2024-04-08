@@ -1,8 +1,14 @@
-import {ReactElement, cloneElement} from 'react';
+import React, {ReactElement} from 'react';
+
+// material-ui
 import {useTheme} from '@mui/material/styles';
 import {AppBar, Box, Container, useScrollTrigger} from '@mui/material';
+
+// project imports
 import Navigation from './DrawerContent/Navigation';
 import useConfig from 'hooks/useConfig';
+
+// ==============================|| HORIZONTAL MENU LIST ||============================== //
 
 interface ElevationScrollProps {
     children: ReactElement;
@@ -10,6 +16,7 @@ interface ElevationScrollProps {
 }
 
 function ElevationScroll({children, window}: ElevationScrollProps) {
+    const theme = useTheme();
     // Note that you normally won't need to set the window ref as useScrollTrigger
     // will default to window.
     // This is only being set here because the demo is in an iframe.
@@ -19,11 +26,14 @@ function ElevationScroll({children, window}: ElevationScrollProps) {
         target: window!
     });
 
-    return cloneElement(children, {
+    theme.shadows[4] = theme.customShadows.z1;
+
+    return React.cloneElement(children, {
         elevation: trigger ? 4 : 0
     });
 }
 
+// ==============================|| HORIZONTAL MENU LIST ||============================== //
 
 const CustomAppBar = () => {
     const theme = useTheme();

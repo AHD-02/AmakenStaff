@@ -67,7 +67,7 @@ export default function Slider(theme: Theme) {
                 },
                 valueLabel: {
                     backgroundColor: theme.palette.grey[600],
-                    color: theme.palette.grey[50]
+                    color: theme.palette.grey[0]
                 }
             }
         }

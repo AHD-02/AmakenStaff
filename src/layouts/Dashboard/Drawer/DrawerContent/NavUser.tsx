@@ -12,11 +12,11 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
+import Avatar from "components/@extended/Avatar";
 import { useGetMenuMaster } from "hooks/useMenu";
 import { RightOutlined } from "@ant-design/icons";
 import { useAppDispatch } from "state/store";
 import { logout } from "state/user";
-import Avatar from "Components/@extended/Avatar";
 
 interface ExpandMoreProps extends IconButtonProps {
   theme: Theme;
@@ -103,7 +103,7 @@ const NavUser = () => {
               sx={{ ...(drawerOpen && { width: 46, height: 46 }) }}
             />
           </ListItemAvatar>
-          <ListItemText primary={`Ahmad Z`} secondary={"Main Admin"} />
+          <ListItemText primary={"Ahmad Alziq"} secondary={"CEO"} />
         </ListItem>
       </List>
       <Menu
@@ -123,7 +123,7 @@ const NavUser = () => {
           horizontal: "right",
         }}
       >
-        <MenuItem onClick={handleLogout}>Logout</MenuItem>
+        <MenuItem onClick={handleLogout}>{'Logout'}</MenuItem>
       </Menu>
     </Box>
   );

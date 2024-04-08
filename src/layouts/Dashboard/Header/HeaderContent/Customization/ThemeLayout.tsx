@@ -1,14 +1,23 @@
 import {ChangeEvent, useState} from 'react';
+
+// material-ui
 import {useTheme} from '@mui/material/styles';
 import {CardMedia, FormControlLabel, Grid, Radio, RadioGroup, Stack, Typography, useMediaQuery} from '@mui/material';
-import MainCard from 'Components/MainCard';
+
+// project import
+import MainCard from 'components/MainCard';
 import useConfig from 'hooks/useConfig';
+
+// assets
 import defaultLayout from 'assets/images/customization/default.svg';
 import rtlLayout from 'assets/images/customization/rtl.svg';
 import miniMenu from 'assets/images/customization/mini-menu.svg';
-import {MenuOrientation, ThemeDirection} from 'types/config';
-import { useHandlerDrawerOpen } from 'hooks/useMenu';
 
+// types
+import {MenuOrientation, ThemeDirection} from 'types/config';
+import {useHandlerDrawerOpen} from "../../../../../hooks/useMenu.ts";
+
+// ==============================|| CUSTOMIZATION - LAYOUT ||============================== //
 
 const ThemeLayout = () => {
     const theme = useTheme();
@@ -61,7 +70,7 @@ const ThemeLayout = () => {
                                 content={false}
                                 sx={{bgcolor: value === 'default' ? 'primary.lighter' : 'secondary.lighter', p: 1}}
                                 border={false}
-                                {...(value === 'default' && {boxShadow: true})}
+                                {...(value === 'default' && {boxShadow: true, shadow: theme.customShadows.primary})}
                             >
                                 <Stack spacing={1.25} alignItems="center">
                                     <CardMedia component="img" src={defaultLayout} alt="Vertical"
@@ -84,7 +93,7 @@ const ThemeLayout = () => {
                                     content={false}
                                     sx={{bgcolor: value === 'mini' ? 'primary.lighter' : 'secondary.lighter', p: 1}}
                                     border={false}
-                                    {...(value === 'mini' && {boxShadow: true})}
+                                    {...(value === 'mini' && {boxShadow: true, shadow: theme.customShadows.primary})}
                                 >
                                     <Stack spacing={1.25} alignItems="center">
                                         <CardMedia component="img" src={miniMenu} alt="Vertical"
@@ -112,6 +121,7 @@ const ThemeLayout = () => {
                                 border={false}
                                 {...(value === ThemeDirection.RTL && {
                                     boxShadow: true,
+                                    shadow: theme.customShadows.primary
                                 })}
                             >
                                 <Stack spacing={1.25} alignItems="center">

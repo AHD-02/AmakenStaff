@@ -31,8 +31,10 @@ import RejectIcon from "./reject";
 import SuccessIcon from "./success";
 import ViewIcon from "./view";
 import NewEmployeesIcon from "./NewEmployeesIcon";
+import AbsentEmployeesIcon from "./absentEmployeesIcon";
 import ActiveEmployeeIcon from "./activeEmployeeIcon";
 import CheckInOutIcon from "./checkInOutIcon";
+import DocumentsIcon from "./documentsIcon";
 import EyeIcon from "./eyeIcon";
 import {FilterIconsDashboard} from "./filterIconsDashboard";
 import ThreeDotsIcon from "./threeDotsIcon";
@@ -73,9 +75,11 @@ export {
     RejectIcon,
     RedoIcon,
     PrintIcon,
+    AbsentEmployeesIcon,
     ActiveEmployeeIcon,
     FilterIconsDashboard,
     EyeIcon,
+    DocumentsIcon,
     CheckInOutIcon,
     ThreeDotsIcon,
     NewEmployeesIcon,

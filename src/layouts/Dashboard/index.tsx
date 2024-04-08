@@ -2,15 +2,11 @@ import {Outlet} from 'react-router-dom';
 import {Box, Container, Toolbar} from '@mui/material';
 import Drawer from './Drawer';
 import Header from './Header';
-import AuthGuard from 'routes/route-guard/AuthGuard';
+import Breadcrumbs from 'components/@extended/Breadcrumbs';
+import AuthGuard from 'utils/route-guard/AuthGuard';
 
 
 const DashboardLayout = () => {
-    //const theme = useTheme();
-    // const matchDownXL = useMediaQuery(theme.breakpoints.down('xl'));
-    // const downLG = useMediaQuery(theme.breakpoints.down('lg'));
-
-    //const {container, miniDrawer, menuOrientation} = useConfig();
 
     const isHorizontal = false //menuOrientation === MenuOrientation.HORIZONTAL && !downLG;
 
@@ -34,6 +30,7 @@ const DashboardLayout = () => {
                             height: 'calc(100% - 110px)'
                         }}
                     >
+                        <Breadcrumbs/>
                         <Outlet/>
                     </Container>
                 </Box>

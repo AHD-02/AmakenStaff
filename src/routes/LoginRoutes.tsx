@@ -1,5 +1,5 @@
 import AuthLayout from "layouts/Auth";
-import LoginPage from "pages/login";
+import LoginPage from "pages/login/loginPage";
 
 const LoginRoutes = {
   path: "/auth",

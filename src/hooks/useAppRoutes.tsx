@@ -1,4 +1,4 @@
-import { DashboardOutlined } from "@ant-design/icons";
+import { EventAvailableOutlined, PeopleAltOutlined } from "@mui/icons-material";
 import { useMemo } from "react";
 
 export type NavigationItem = {
@@ -7,21 +7,28 @@ export type NavigationItem = {
   readonly icon?: React.ReactNode;
   readonly link: string | undefined;
   readonly requiredParams?: readonly string[];
+  readonly urlFillParams?: readonly string[];
+  readonly requiredPermission?: string[];
   readonly hideFromSidebar?: boolean;
 };
 
 export const wholeContent: readonly NavigationItem[] = [
   {
-    label: "dashboard",
-    icon: <DashboardOutlined size={25} />,
+    label: "Users",
+    icon: <PeopleAltOutlined fontSize="small" />,
     link: "/",
+  },
+  {
+    label: "Events",
+    icon: <EventAvailableOutlined fontSize="small" />,
+    link: "/events",
   },
 ] as const;
 
-const firstSectionContentArray = ["/"];
+const firstSectionContentArray = ["/", "/events"];
 const secondSectionContentArray = ["settings", "help"];
 
-const sideBarKeys = [...firstSectionContentArray, ...secondSectionContentArray]; // firstSectionContentArray.concat(secondSectionContentArray)
+const sideBarKeys = [...firstSectionContentArray, ...secondSectionContentArray];
 
 const sideMenuData = {
   firstSectionContent: wholeContent.filter(
@@ -42,12 +49,7 @@ export const useAppRoutes = () => {
     const filterItems = (
       items: readonly NavigationItem[]
     ): NavigationItem[] => {
-      return items
-        .filter((item) => !item.hideFromSidebar)
-        .map((item) => ({
-          ...item,
-          children: item.children ? filterItems(item.children) : undefined,
-        }));
+      return items.filter((item) => !item.hideFromSidebar);
     };
 
     const res = {

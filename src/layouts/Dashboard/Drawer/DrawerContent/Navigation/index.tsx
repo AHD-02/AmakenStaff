@@ -12,7 +12,6 @@ import { useAppRoutes } from "hooks/useAppRoutes";
 
 const menuItem: { items: NavItemType[] } = { items: [] };
 
-
 const Navigation = () => {
   const theme = useTheme();
   const { menuOrientation } = useConfig();
@@ -40,29 +39,6 @@ const Navigation = () => {
             id: navItem.link,
             breadcrumbs: false,
             iconComponent: navItem.icon,
-            children:
-              navItem.children
-                ?.filter((i) => !i.hideFromSidebar)
-                ?.map((child) => ({
-                  title: child.label,
-                  url: child.link,
-                  iconComponent: child.icon,
-                  id: child.link,
-                  type:
-                    (child.children ?? [])?.length === 0 ? "item" : "collapse",
-                  breadcrumbs: false,
-                  children:
-                    child.children
-                      ?.filter((i) => !i.hideFromSidebar)
-                      ?.map((grandChild) => ({
-                        title: grandChild.label,
-                        url: grandChild.link,
-                        iconComponent: grandChild.icon,
-                        id: grandChild.link,
-                        type: "item",
-                        breadcrumbs: true,
-                      })) ?? [],
-                })) ?? [],
           } satisfies NavItemType;
         }) ?? [];
 

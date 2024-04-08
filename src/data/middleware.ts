@@ -5,10 +5,10 @@ import {
   FetchBaseQueryError,
 } from "@reduxjs/toolkit/query";
 import { Mutex } from "async-mutex";
-import { toast } from "react-toastify";
 import ENV from "env";
 import { RootState } from "state/store";
-import { setTokens, logout } from "state/user";
+import { logout, setTokens } from "state/user";
+import { toast } from "react-toastify";
 
 const mutex = new Mutex();
 
@@ -28,17 +28,26 @@ const customFetchBase: BaseQueryFn<
   unknown,
   FetchBaseQueryError
 > = async (args, api, extraOptions) => {
-
   await mutex.waitForUnlock();
 
   let result = (await baseQuery(args, api, {})) as any;
   const state: any = api.getState() as RootState;
 
+  const handleShowingErrors = () => {
+    const error = Object.values(result.error?.data);
+
+    Array.isArray(result.error?.data)
+      ? toast.error(result.error?.data)
+      : toast.error(
+          Array.isArray(error) ? error?.[0]?.toString() : "Something went wrong"
+        );
+  };
+
   if (
     result.meta.request.method === "POST" &&
     result.meta.response.status === 200
   )
-    toast.success("Action successful");
+    toast.success("Action Successful");
   if (result.meta.response.status === 500) toast.error("Something went wrong");
   if (
     (result.meta.request.method === "POST" ||
@@ -47,7 +56,7 @@ const customFetchBase: BaseQueryFn<
     result.meta.response.status >= 400 &&
     result.meta.response.status < 500
   ) {
-    toast.error(result.error?.data);
+    handleShowingErrors();
   }
 
   if (result?.error?.data?.status === 401) {

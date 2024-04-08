@@ -1,10 +1,16 @@
+// material-ui
 import {useTheme} from '@mui/material/styles';
 import {useMediaQuery} from '@mui/material';
+
+// project import
 import DrawerHeaderStyled from './DrawerHeaderStyled';
-import Logo from 'Components/logo';
+import Logo from 'components/logo';
 import useConfig from 'hooks/useConfig';
+
+// types
 import {MenuOrientation} from 'types/config';
 
+// ==============================|| DRAWER HEADER ||============================== //
 
 interface Props {
     open: boolean;

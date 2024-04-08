@@ -1,5 +1,8 @@
+// material-ui
 import {Theme, useTheme} from '@mui/material/styles';
 import {Box} from '@mui/material';
+
+// project import
 import {ColorProps} from 'types/extended';
 import getColors from 'utils/getColors';
 import {SxProps} from "@mui/system";
@@ -11,7 +14,7 @@ interface Props {
     sx?: SxProps<Theme>;
 }
 
-const DotComponent = ({color, size, variant, sx}: Props) => {
+const Dot = ({color, size, variant, sx}: Props) => {
     const theme = useTheme();
     const colors = getColors(theme, color || 'primary');
     const {main} = colors;
@@ -33,4 +36,4 @@ const DotComponent = ({color, size, variant, sx}: Props) => {
     );
 };
 
-export default DotComponent;
+export default Dot;

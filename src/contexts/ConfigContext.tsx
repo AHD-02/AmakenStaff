@@ -1,12 +1,20 @@
 import {createContext, ReactNode, useEffect} from 'react';
+
+// project import
 import config from 'config';
 import useLocalStorage from 'hooks/useLocalStorage';
-import {CustomizationProps, FontFamily, MenuOrientation, PresetColor, ThemeDirection, ThemeMode} from 'types/config';
 
+// types
+import {CustomizationProps, FontFamily, MenuOrientation, PresetColor, ThemeDirection, ThemeMode} from 'types/config';
+import {useSelector} from "react-redux";
+import {getLanguage} from "../state";
+
+// initial state
 const initialState: CustomizationProps = {
     ...config,
     onChangeContainer: () => {
     },
+    // onChangeLocalization: (lang: I18n) => {},
     onChangeMode: (_: ThemeMode) => {
     },
     onChangePresetColor: (_: PresetColor) => {
@@ -21,6 +29,7 @@ const initialState: CustomizationProps = {
     }
 };
 
+// ==============================|| CONFIG CONTEXT & PROVIDER ||============================== //
 
 const ConfigContext = createContext(initialState);
 
@@ -30,14 +39,15 @@ type ConfigProviderProps = {
 
 function ConfigProvider({children}: ConfigProviderProps) {
     const [config, setConfig] = useLocalStorage('mantis-react-ts-config', initialState);
+    const lang: string = useSelector(getLanguage);
 
 
     useEffect(() => {
         setConfig({
             ...config,
-            themeDirection: ThemeDirection.LTR
+            themeDirection: lang === "ar" ? ThemeDirection.RTL : ThemeDirection.LTR
         });
-    }, []);
+    }, [lang]);
 
     const onChangeContainer = () => {
         setConfig({

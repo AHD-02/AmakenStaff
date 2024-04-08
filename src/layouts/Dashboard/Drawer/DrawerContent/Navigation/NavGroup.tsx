@@ -1,7 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
 import { matchPath, useLocation } from "react-router-dom";
-
-// material-ui
 import { styled, useTheme } from "@mui/material/styles";
 import {
   Box,
@@ -17,17 +15,15 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { FormattedMessage } from "react-intl";
-
 import NavItem from "./NavItem";
 import NavCollapse from "./NavCollapse";
-
+import SimpleBar from "components/SimpleBar";
+import Transitions from "components/@extended/Transitions";
 import useConfig from "hooks/useConfig";
 import { useGetMenuMaster } from "hooks/useMenu";
 import { DownOutlined, GroupOutlined, RightOutlined } from "@ant-design/icons";
 import { NavItemType } from "types/menu";
 import { MenuOrientation, ThemeMode } from "types/config";
-import SimpleBar from "Components/SimpleBar";
-import Transitions from "Components/@extended/Transitions";
 
 interface Props {
   item: NavItemType;
@@ -106,7 +102,6 @@ const NavGroup = ({
         setCurrentItem(item);
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [item, lastItem, downLG]);
 
   const checkOpenForParent = (child: NavItemType[], id: string) => {
@@ -152,7 +147,6 @@ const NavGroup = ({
   useEffect(() => {
     checkSelectedOnload(currentItem);
     if (openMini) setAnchorEl(null);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname, currentItem]);
 
   const handleClick = (
@@ -171,18 +165,7 @@ const NavGroup = ({
   };
 
   const isSelected = selectedID === currentItem.id;
-
-  //const Icon = currentItem?.iconComponent!;
   const itemIcon = currentItem.iconComponent!;
-  //     ? (
-  //   <Icon
-  //     style={{
-  //       fontSize: 20,
-  //       stroke: '1.5',
-  //       color: isSelected ? theme.palette.primary.main : theme.palette.secondary.dark
-  //     }}
-  //   />
-  // ) : null;
 
   const navCollapse = item.children?.map((menuItem, index) => {
     switch (menuItem.type) {

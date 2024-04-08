@@ -35,13 +35,54 @@ export type BasePagedSearch<T> = {
   lookup?: boolean | null;
 } & T;
 
+export type Locale = "en" | "ar" | "cn";
 
+type CheckItem = { label: string; value: string };
+export const LocaleOptions: CheckItem[] = [
+  { label: "English", value: "en" },
+  { label: "العربية", value: "ar" },
+  { label: "中文", value: "cn" },
+];
+
+export type LookupType = {
+  value: string | number;
+  label: string;
+  description?: string;
+};
 
 export type RadioButtonOptionsType = {
   value: string | number | boolean;
   label: string;
   description?: string;
 };
+
+export const genders = [
+  { value: "Male", label: "Male" },
+  { value: "Female", label: "Female" },
+];
+
+export type legacyUserObj = {
+  LegacyUserId?: number;
+  LegacyEmployeeId?: number;
+};
+
+export type LookUpMetaTypes =
+  | "useGetCitiesQuery"
+  | "useGetCountriesQuery"
+  | "useGetZonesQuery"
+  | "useGetNationalitiesQuery"
+  | "useGetAllowncesTypeQuery"
+  | "useGetDeductionTypeQuery"
+  | "useGetZoneTypesQuery"
+  | "useGetLicenseTypesQuery"
+  | "useGetCurrenciesQuery"
+  | "useGetEmployeeLeaveCycleQuery"
+  | "useGetCompaniesQuery"
+  | "useGetCompanyFormsQuery"
+  | "useGetFormCategoriesQuery"
+  | "useGetCompanyUsersQuery"
+  | "useFormCategoriesLookupQuery"
+  | "useGetEmployeePropertiesQuery";
 
 export type HeadCell = {
   disablePadding: boolean;
@@ -54,3 +95,9 @@ export type SelectItem = {
   value: string | number | undefined;
   label: string;
 };
+
+export enum STATUSES {
+  APPROVED = "Approved",
+  SUCCESS = "Success",
+  PENDING = "Pending",
+}

@@ -35,7 +35,7 @@ const AuthBackground = () => {
           height: "200px",
         }}
         alt="shanab"
-        src={"/TalmaroFull.png"}
+        src={"/AmakenLogo.png"}
       />
     </Box>
   );

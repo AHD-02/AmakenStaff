@@ -1,4 +1,4 @@
 const ENV = {
-    AMAKEN_API_BASE_URL: 'http://localhost:8080/api/',
+    AMAKEN_API_BASE_URL: 'plankton-app-8stdj.ondigitalocean.app',
 }
 export default ENV;

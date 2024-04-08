@@ -1,5 +1,6 @@
 import {Outlet} from 'react-router-dom';
-import GuestGuard from 'routes/route-guard/GuestGuard';
+import GuestGuard from 'utils/route-guard/GuestGuard';
+
 
 const AuthLayout = () => (
     <GuestGuard>

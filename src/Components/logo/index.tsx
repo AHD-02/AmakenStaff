@@ -1,10 +1,15 @@
 import {Link} from 'react-router-dom';
 import {To} from 'history';
+
+// material-ui
 import {ButtonBase} from '@mui/material';
 import {SxProps} from '@mui/system';
+
+// project import
 import {APP_DEFAULT_PATH} from 'config';
 import useIsAuthenticated from 'hooks/useIsAuthenticated';
 
+// ==============================|| MAIN LOGO ||============================== //
 
 interface Props {
     reverse?: boolean;

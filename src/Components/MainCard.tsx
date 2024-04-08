@@ -12,11 +12,15 @@ import {
     Divider,
     Typography
 } from '@mui/material';
-import Highlighter from '../Components/Highlighter';
 
+// project import
+import Highlighter from './Highlighter';
+
+// types
 import {KeyedObject} from 'types/root';
 import {ThemeMode} from 'types/config';
 
+// header style
 const headerSX = {
     p: 2.5,
     '& .MuiCardHeader-action': {m: '0px auto', alignSelf: 'center'}
@@ -79,10 +83,10 @@ const MainCard = forwardRef(
                     position: 'relative',
                     border: border ? '1px solid' : 'none',
                     borderRadius: 1,
-                    borderColor: theme.palette.mode === ThemeMode.DARK ? theme.palette.divider : theme.palette.grey[800],
-                    boxShadow: boxShadow && (!border || theme.palette.mode === ThemeMode.DARK) ? shadow : 'inherit',
+                    borderColor: theme.palette.mode === ThemeMode.DARK ? theme.palette.divider : theme.palette.grey.A800,
+                    boxShadow: boxShadow && (!border || theme.palette.mode === ThemeMode.DARK) ? shadow || theme.customShadows.z1 : 'inherit',
                     ':hover': {
-                        boxShadow: boxShadow ? shadow : 'inherit'
+                        boxShadow: boxShadow ? shadow || theme.customShadows.z1 : 'inherit'
                     },
                     ...(codeHighlight && {
                         '& pre': {

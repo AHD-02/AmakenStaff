@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 
+// ----------------------------------------------------------------------
 
 export default function useLocalStorage<ValueType>(key: string, defaultValue: ValueType) {
     const [value, setValue] = useState(() => {

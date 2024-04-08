@@ -1,6 +1,9 @@
 import {isRouteErrorResponse, useRouteError} from 'react-router-dom';
+
+// material-ui
 import {Alert} from '@mui/material';
 
+// ==============================|| ELEMENT ERROR - COMMON ||============================== //
 
 const ErrorBoundary = () => {
     const error = useRouteError();

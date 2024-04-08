@@ -1,10 +1,17 @@
 import {ReactNode} from 'react';
+
+// material-ui
 import {styled, Theme, useTheme} from '@mui/material/styles';
 import MuiAvatar from '@mui/material/Avatar';
 import {AvatarProps} from '@mui/material';
+
+// project import
 import getColors from 'utils/getColors';
+
+// types
 import {AvatarTypeProps, ColorProps, ExtendedStyleProps, SizeProps} from 'types/extended';
 
+// ==============================|| AVATAR - COLOR STYLE ||============================== //
 
 interface AvatarStyleProps extends ExtendedStyleProps {
     variant?: AvatarProps['variant'];
