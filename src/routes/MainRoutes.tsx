@@ -1,6 +1,6 @@
-import DashboardPage from "pages/dashboard";
 import ErrorBoundary from "./ErrorBoundary";
 import DashboardLayout from "layouts/Dashboard";
+import UsersPage from "pages/users";
 
 const MainRoutes = {
   path: "/",
@@ -9,7 +9,7 @@ const MainRoutes = {
   children: [
     {
       path: "/",
-      element: <DashboardPage />
+      element: <UsersPage />
     },
 
   ],

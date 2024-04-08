@@ -1,23 +1,14 @@
 import {ChangeEvent, useState} from 'react';
-
-// material-ui
 import {useTheme} from '@mui/material/styles';
 import {CardMedia, FormControlLabel, Grid, Radio, RadioGroup, Stack, Typography, useMediaQuery} from '@mui/material';
-
-// project import
 import MainCard from 'componentsss/MainCard';
 import useConfig from 'hooks/useConfig';
-
-// assets
 import defaultLayout from 'assets/images/customization/default.svg';
 import rtlLayout from 'assets/images/customization/rtl.svg';
 import miniMenu from 'assets/images/customization/mini-menu.svg';
-
-// types
 import {MenuOrientation, ThemeDirection} from 'types/config';
 import {useHandlerDrawerOpen} from "../../../../../hooks/useMenu.ts";
 
-// ==============================|| CUSTOMIZATION - LAYOUT ||============================== //
 
 const ThemeLayout = () => {
     const theme = useTheme();
