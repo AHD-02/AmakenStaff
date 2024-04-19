@@ -18,8 +18,8 @@ export const signInValidationSchema = yup.object({
 
 
 export const signInInitialValues: SignInRequest = {
-    userName: "",
-    password: "",
+    userName: "hello@email.com",
+    password: "12345678",
 }
 
 

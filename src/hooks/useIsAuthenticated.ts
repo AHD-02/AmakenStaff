@@ -1,6 +1,10 @@
+import {useTypedSelector} from 'state/store';
 
 const useIsAuthenticated = () => {
-    return true;
+    const isAuthenticated = useTypedSelector(
+        (state) => state.user?.isAuthenticated
+    );
+    return isAuthenticated;
 };
 
 export default useIsAuthenticated;
