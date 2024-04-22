@@ -7,18 +7,18 @@ export type SignInResponse = {
 }
 
 export type SignInRequest = {
-    userName: string,
+    email: string,
     password: string,
 }
 
 export const signInValidationSchema = yup.object({
-    userName: yup.string().email('invalid').required('required'),
+    email: yup.string().email('invalid').required('required'),
     password: yup.string().required('required'),
 });
 
 
 export const signInInitialValues: SignInRequest = {
-    userName: "hello@email.com",
+    email: "hello@email.com",
     password: "12345678",
 }
 

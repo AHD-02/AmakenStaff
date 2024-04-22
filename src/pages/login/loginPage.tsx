@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { Formik, useFormik } from "formik";
-import * as Yup from "yup";
 
 import {
   Button,
@@ -13,7 +12,6 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-
 import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 import { useLoginMutation } from "data/userApi";
 import { signInInitialValues, signInValidationSchema } from "types";
@@ -24,6 +22,7 @@ import { useAppDispatch, useTypedSelector } from "state/store";
 import AuthWrapper from "componentsss/auth/AuthWrapper";
 import IconButton from "componentsss/@extended/IconButton";
 import AnimateButton from "componentsss/@extended/AnimateButton";
+
 
 const Login = () => {
   const [
@@ -37,14 +36,8 @@ const Login = () => {
     validationSchema: signInValidationSchema,
     validateOnChange: false,
     validateOnBlur: false,
-    onSubmit: () => {
-      dispatch(
-        setTokens({
-          refreshToken: "hello world",
-          accessToken: "hello",
-        })
-      );
-      // signIn({ password: values.password, userName: values.userName });
+    onSubmit: (values) => {
+      signIn({ email: values.email, password: values.password });
     },
   });
 
@@ -72,7 +65,7 @@ const Login = () => {
     if (data?.jwt) {
       dispatch(
         setTokens({
-          refreshToken: data.refreshToken,
+          refreshToken: "data.refreshToken",
           accessToken: data.jwt,
         })
       );
@@ -118,27 +111,10 @@ const Login = () => {
 
         <Grid item xs={12}>
           <Formik
-            initialValues={{
-              username: "hello@world.com",
-              password: "12345678",
-              reCaptchaToken: "",
-              submit: null,
-            }}
-            validationSchema={Yup.object().shape({
-              username: Yup.string()
-                .email("Must be a valid email")
-                .max(255)
-                .required("Email is required"),
-              password: Yup.string().max(255).required("Password is required"),
-            })}
-            onSubmit={async () => {
-              dispatch(
-                setTokens({
-                  refreshToken: "hello world",
-                  accessToken: "hello",
-                })
-              );
-              // signIn({ password: values.password, userName: values.username });
+            initialValues={signInInitialValues}
+            validationSchema={signInValidationSchema}
+            onSubmit={async (values) => {
+              signIn({ email: values.email, password: values.password });
             }}
           >
             {({
@@ -154,26 +130,24 @@ const Login = () => {
                 <Grid container spacing={3}>
                   <Grid item xs={12}>
                     <Stack spacing={1}>
-                      <InputLabel htmlFor="email-login">
-                        {"Username"}
-                      </InputLabel>
+                      <InputLabel htmlFor="email-login">{"email"}</InputLabel>
                       <OutlinedInput
                         id="email-login"
                         type="email"
-                        value={values.username}
-                        name="username"
+                        value={values.email}
+                        name="email"
                         onBlur={handleBlur}
                         onChange={handleChange}
                         fullWidth
-                        error={Boolean(touched.username && errors.username)}
+                        error={Boolean(touched.email && errors.email)}
                       />
                     </Stack>
-                    {touched.username && errors.username && (
+                    {touched.email && errors.email && (
                       <FormHelperText
                         error
                         id="standard-weight-helper-text-email-login"
                       >
-                        {errors.username}
+                        {errors.email}
                       </FormHelperText>
                     )}
                   </Grid>

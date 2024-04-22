@@ -5,12 +5,12 @@ import customFetchBase from "data/middleware";
 export const GeneralApi = createApi({
   baseQuery: customFetchBase,
   reducerPath: "GeneralApi",
-  tagTypes: ["account", "whenFirstStep", "whenLastStep"],
+  tagTypes: ["account"],
   endpoints: (builder) => ({
     login: builder.mutation<SignInResponse, SignInRequest>({
       invalidatesTags: ["account"],
       query: (body) => ({
-        url: "Users/login",
+        url: "admin/signin",
         method: "POST",
         body: body,
       }),
