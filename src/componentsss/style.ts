@@ -17,3 +17,23 @@ export const TableContainer = styled(Grid)(() => ({
   borderRadius: "15px",
   padding: "3rem 5rem",
 }));
+
+export const StyledStepTitle = styled(Grid)<{htmlColor?: string}>(({htmlColor}) => ({
+  color: htmlColor ? htmlColor : "#0E777A",
+  fontSize: "19px",
+  fontWeight: "bold",
+}));
+
+export const AddIconContainer = styled(Grid)(() => ({
+  width: "25px",
+  height: "25px",
+  background: "white",
+  color: "#DD8800",
+  borderRadius: "50%",
+  justifyContent: "center",
+  alignItems: "center",
+  marginRight: "0.5rem",
+  "&:hover, &.hovered": {
+    color: "#0E777A"
+  }
+}));

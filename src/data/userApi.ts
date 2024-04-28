@@ -10,12 +10,18 @@ export const GeneralApi = createApi({
     login: builder.mutation<SignInResponse, SignInRequest>({
       invalidatesTags: ["account"],
       query: (body) => ({
-        url: "admin/signin",
+        url: "admin/signIn",
         method: "POST",
         body: body,
+      }),
+    }),
+    admins: builder.query<any, void>({
+      query: () => ({
+        url: "admin/searchAdmins",
+        method: "GET",
       }),
     }),
   }),
 });
 
-export const { useLoginMutation } = GeneralApi;
+export const { useLoginMutation, useAdminsQuery } = GeneralApi;

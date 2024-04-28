@@ -1,5 +1,7 @@
 import ErrorBoundary from "./ErrorBoundary";
 import DashboardLayout from "layouts/Dashboard";
+import EventsPage from "pages/events";
+import StaffPage from "pages/manageStaff";
 import UsersPage from "pages/users";
 
 const MainRoutes = {
@@ -9,9 +11,16 @@ const MainRoutes = {
   children: [
     {
       path: "/",
-      element: <UsersPage />
+      element: <StaffPage />,
     },
-
+    {
+      path: "/users",
+      element: <UsersPage />,
+    },
+    {
+      path: '/events',
+      element: <EventsPage />,
+    }
   ],
 };
 

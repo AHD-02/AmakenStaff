@@ -68,7 +68,7 @@ const customFetchBase: BaseQueryFn<
         if (refreshToken) {
           const refreshResult = (await baseQuery(
             {
-              url: "Users/login",
+              url: "admin/signIn",
               method: "POST",
               body: {
                 refreshToken,

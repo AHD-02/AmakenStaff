@@ -1,14 +1,7 @@
-// material-ui
 import {alpha, Theme} from '@mui/material/styles';
-
-// project import
 import getColors from 'utils/getColors';
 import getShadow from 'utils/getShadow';
-
-// types
 import {ButtonVariantProps, ExtendedStyleProps} from 'types/extended';
-
-// ==============================|| BUTTON - COLORS ||============================== //
 
 interface ButtonStyleProps extends ExtendedStyleProps {
     variant: ButtonVariantProps;

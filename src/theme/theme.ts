@@ -1,10 +1,7 @@
-// types
 import {PaletteThemeProps} from 'types/theme';
 import {PalettesProps} from '@ant-design/colors';
 import {PaletteColorOptions} from '@mui/material/styles';
 import {ThemeMode} from 'types/config';
-
-// ==============================|| PRESET THEME - DEFAULT ||============================== //
 
 const Default = (colors: PalettesProps, _: ThemeMode): PaletteThemeProps => {
         const {grey} = colors;
@@ -29,20 +26,11 @@ const Default = (colors: PalettesProps, _: ThemeMode): PaletteThemeProps => {
         };
         const contrastText = '#fff';
 
-
-        const primaryColors = ['#f0fdfb', '#cbfcf6', '#98f7ef', '#5cece4', '#2bd6d3', '#0e777a', '#105c5f', '#124d4f', '#032c30', '#032c30'];
+        const primaryColors = ['#f0fdfb', '#cbfcf6', '#98f7ef', '#5cece4', '#2bd6d3', '#A5583A', '#191E3A', '#124d4f', '#032c30', '#032c30'];
         const errorColors = ['#FDE8E7', '#F25E52', '#F04134', '#EE3B2F', '#E92A21'];
         const warningColors = ['#FFF7E0', '#FFC926', '#FFBF00', '#FFB900', '#FFA900'];
         const infoColors = ['#E0F4F5', '#26B0BA', '#00A2AE', '#009AA7', '#008694'];
         const successColors = ['#E0F5EA', '#26B56E', '#00A854', '#00A04D', '#008D3A'];
-
-// if (mode === ThemeMode.DARK) {
-//     primaryColors = ['#222130', '#2b2946', '#37335a', '#443e78', '#554ca0', '#655ac8', '#9186dd', '#5F53DF', '#c3baf4', '#efecfb'];
-//     errorColors = ['#321d1d', '#7d2e28', '#d13c31', '#e66859', '#f8baaf'];
-//     warningColors = ['#342c1a', '#836611', '#dda705', '#e9bf28', '#f8e577'];
-//     infoColors = ['#1a2628', '#11595f', '#058e98', '#1ea6aa', '#64cfcb'];
-//     successColors = ['#1a2721', '#115c36', '#05934c', '#1da65d', '#61ca8b'];
-// }
 
         return {
             primary: {

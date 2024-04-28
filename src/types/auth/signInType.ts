@@ -4,6 +4,7 @@ export type SignInResponse = {
     jwt: string,
     refreshToken: string,
     wizardRequired: boolean,
+    token: string
 }
 
 export type SignInRequest = {

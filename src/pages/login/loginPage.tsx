@@ -23,14 +23,13 @@ import AuthWrapper from "componentsss/auth/AuthWrapper";
 import IconButton from "componentsss/@extended/IconButton";
 import AnimateButton from "componentsss/@extended/AnimateButton";
 
-
 const Login = () => {
   const [
     signIn,
     { data, isSuccess, error, isLoading: isSignInInProgress, isError },
   ] = useLoginMutation();
 
-  console.log(signIn);
+
   const formik = useFormik({
     initialValues: signInInitialValues,
     validationSchema: signInValidationSchema,
@@ -62,11 +61,11 @@ const Login = () => {
   }, []);
 
   useEffect(() => {
-    if (data?.jwt) {
+    if (data?.token) {
       dispatch(
         setTokens({
           refreshToken: "data.refreshToken",
-          accessToken: data.jwt,
+          accessToken: data.token,
         })
       );
     }
@@ -87,6 +86,7 @@ const Login = () => {
   }, [isSuccess, isError, isSignInInProgress]);
 
   const [showPassword, setShowPassword] = useState(false);
+
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };

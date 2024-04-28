@@ -2,7 +2,6 @@ import { Button, Divider, Fade, CardContent, Modal, Stack, Backdrop } from '@mui
 import MainCard from 'componentsss/MainCard';
 import { ModalProps } from './types';
 
-// ==============================|| MODAL - TRANSITIONS ||============================== //
 
 const ModalComponent = (props: ModalProps) => {
   const isPrimaryButtonShown = Boolean(props.primaryButtonAction && props.primaryButtonTitle)

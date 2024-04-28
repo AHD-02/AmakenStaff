@@ -14,9 +14,14 @@ export type NavigationItem = {
 
 export const wholeContent: readonly NavigationItem[] = [
   {
-    label: "Users",
+    label: "Staff",
     icon: <PeopleAltOutlined fontSize="small" />,
     link: "/",
+  },
+  {
+    label: "Users",
+    icon: <PeopleAltOutlined fontSize="small" />,
+    link: "/users",
   },
   {
     label: "Events",
@@ -25,7 +30,7 @@ export const wholeContent: readonly NavigationItem[] = [
   },
 ] as const;
 
-const firstSectionContentArray = ["/", "/events"];
+const firstSectionContentArray = ["/", "/users", "/events"];
 const secondSectionContentArray = ["settings", "help"];
 
 const sideBarKeys = [...firstSectionContentArray, ...secondSectionContentArray];
