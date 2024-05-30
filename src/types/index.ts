@@ -3,3 +3,4 @@ export * from "./auth/signInType";
 export * from "./commonType";
 export * from "./auth/resetPassword";
 export * from './lookups';
+export * from "./privatePlaces"

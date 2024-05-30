@@ -10,6 +10,7 @@ import SwitchComponent from './switch/index';
 import TableHeadComponent from './tableHeader/tableHeader';
 import MultiSelect from './multiSelect';
 import MonthDatePicker from './monthPicker';
+import DataWidget from './dataWidget';
 
 export {
     TextInput,
@@ -24,4 +25,5 @@ export {
     TableHeadComponent,
     MultiSelect,
     MonthDatePicker,
+    DataWidget,
 }

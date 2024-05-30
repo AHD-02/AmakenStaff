@@ -51,15 +51,28 @@ export const lookupResolver = (
   lookupArray: Array<LookupType>,
   value: string | Array<number> | undefined | number
 ) => {
-  return lookupArray?.find((e: LookupType) => e.value === value)?.label ?? ""
+  return lookupArray?.find((e: LookupType) => e.value === value)?.label ?? "";
 };
-
 
 export const handleDownloadUrl = (path: string) => {
   const baseUrl = "https://";
-  const fullUrl = path.startsWith("http://") || path.startsWith("https://") ? path : baseUrl + path;
+  const fullUrl =
+    path.startsWith("http://") || path.startsWith("https://")
+      ? path
+      : baseUrl + path;
   const link = document.createElement("a");
   link.href = fullUrl;
   link.click();
   link.remove();
+};
+
+export const imageUrlResolver = (url: string) => {
+  if (!url) {
+    return "";
+  }
+  if (url.includes("https")) {
+    return url;
+  } else {
+    return `https://${url}`;
+  }
 };

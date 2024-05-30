@@ -4,8 +4,8 @@ import { AddIconContainer, StyledStepTitle } from "componentsss/style";
 
 interface IProps {
   title: string;
-  buttonTitle: string;
-  onClick: () => void;
+  buttonTitle?: string;
+  onClick?: () => void;
 }
 
 const AboveHeaderComponent = ({ buttonTitle, onClick, title }: IProps) => {
@@ -13,18 +13,20 @@ const AboveHeaderComponent = ({ buttonTitle, onClick, title }: IProps) => {
     <Grid item container justifyContent={"space-between"} alignItems={"center"}>
       <StyledStepTitle xs={"auto"}>{title}</StyledStepTitle>
 
-      <Grid item xs={"auto"}>
-        <Button
-          onClick={onClick}
-          startIcon={
-            <AddIconContainer item container>
-              <AddRounded fontSize="inherit" />
-            </AddIconContainer>
-          }
-        >
-          {buttonTitle}
-        </Button>
-      </Grid>
+      {buttonTitle && (
+        <Grid item xs={"auto"}>
+          <Button
+            onClick={() => onClick?.()}
+            startIcon={
+              <AddIconContainer item container>
+                <AddRounded fontSize="inherit" />
+              </AddIconContainer>
+            }
+          >
+            {buttonTitle}
+          </Button>
+        </Grid>
+      )}
     </Grid>
   );
 };

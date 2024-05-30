@@ -1,4 +1,4 @@
-import { Grid, Typography, styled } from "@mui/material";
+import { Box, Grid, Typography, styled } from "@mui/material";
 
 export const CheckBoxLabel = styled(Typography)(() => ({
   color: "#ABAFB3",
@@ -8,7 +8,7 @@ export const CheckBoxLabel = styled(Typography)(() => ({
 export const StyledWizardTableData = styled(Grid)(() => ({
   color: "#6A707E",
   fontSize: "14px",
-  fontWeight: 600
+  fontWeight: 600,
 }));
 
 export const TableContainer = styled(Grid)(() => ({
@@ -18,11 +18,13 @@ export const TableContainer = styled(Grid)(() => ({
   padding: "3rem 5rem",
 }));
 
-export const StyledStepTitle = styled(Grid)<{htmlColor?: string}>(({htmlColor}) => ({
-  color: htmlColor ? htmlColor : "#0E777A",
-  fontSize: "19px",
-  fontWeight: "bold",
-}));
+export const StyledStepTitle = styled(Grid)<{ htmlColor?: string }>(
+  ({ htmlColor }) => ({
+    color: htmlColor ? htmlColor : "#0E777A",
+    fontSize: "19px",
+    fontWeight: "bold",
+  })
+);
 
 export const AddIconContainer = styled(Grid)(() => ({
   width: "25px",
@@ -34,6 +36,32 @@ export const AddIconContainer = styled(Grid)(() => ({
   alignItems: "center",
   marginRight: "0.5rem",
   "&:hover, &.hovered": {
-    color: "#0E777A"
-  }
+    color: "#0E777A",
+  },
+}));
+
+export const StyledImage = styled(Grid)<{}>(({ theme }) => ({
+  background: theme.palette.secondary?.[100],
+  border: `1px dashed ${theme.palette.secondary?.[100]}`,
+  borderRadius: "16px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  width: "131px",
+  height: "109px",
+  cursor: "pointer",
+  position: "relative",
+  backgroundSize: "cover",
+}));
+
+export const ImageGrid = styled(Box)<{
+  component: string;
+  alt: string;
+  src: string;
+}>(() => ({
+  objectFit: "contain",
+  height: "100%",
+  width: "100%",
+  borderRadius: "16px",
+  postion: "absolute",
 }));

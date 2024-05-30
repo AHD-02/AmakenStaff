@@ -1,4 +1,4 @@
-import { EventAvailableOutlined, PeopleAltOutlined } from "@mui/icons-material";
+import { EventAvailableOutlined, PeopleAltOutlined, PlaceOutlined } from "@mui/icons-material";
 import { useMemo } from "react";
 
 export type NavigationItem = {
@@ -19,6 +19,11 @@ export const wholeContent: readonly NavigationItem[] = [
     link: "/",
   },
   {
+    label: "Private Places",
+    icon: <PlaceOutlined fontSize="small" />,
+    link: "/private_places",
+  },
+  {
     label: "Users",
     icon: <PeopleAltOutlined fontSize="small" />,
     link: "/users",
@@ -28,9 +33,14 @@ export const wholeContent: readonly NavigationItem[] = [
     icon: <EventAvailableOutlined fontSize="small" />,
     link: "/events",
   },
+  {
+    label:"",
+    link: "/viewPrivatePlace/:id",
+    hideFromSidebar: true,
+  }
 ] as const;
 
-const firstSectionContentArray = ["/", "/users", "/events"];
+const firstSectionContentArray = ["/", "/users", "/events", "/private_places"];
 const secondSectionContentArray = ["settings", "help"];
 
 const sideBarKeys = [...firstSectionContentArray, ...secondSectionContentArray];
